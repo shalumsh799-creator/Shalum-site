@@ -1,1 +1,1 @@
-console.log("Quran website loaded!");
+console.log("Shalum website loaded!");
