@@ -4,75 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Shalum Quran Website</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    /* Body & Fonts */
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #fdf6e3; /* Soft cream background */
+      color: #333;
     }
 
     header {
-      background-color: #1e3a8a;
-      color: white;
-      padding: 20px;
+      background: #2c3e50; /* Dark elegant header */
+      color: #fff;
       text-align: center;
+      padding: 25px 15px;
       font-size: 1.8rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: 500;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .search-box {
-      text-align: center;
-      margin: 20px;
+      display: flex;
+      justify-content: center;
+      margin: 20px 10px;
     }
 
     .search-box input {
       width: 90%;
       max-width: 400px;
-      padding: 10px 15px;
-      border-radius: 25px;
+      padding: 12px 18px;
+      border-radius: 30px;
       border: 1px solid #ccc;
       font-size: 1rem;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(44,62,80,0.3);
+      border-color: #2c3e50;
     }
 
     .surah-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 18px;
       padding: 20px;
       list-style: none;
       margin: 0;
     }
 
     .surah-list li {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: #fff8f0; /* Soft cream card */
+      border-radius: 12px;
+      padding: 15px 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .surah-list li:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
     .surah-list a {
       text-decoration: none;
-      color: #1e3a8a;
-      font-weight: bold;
+      color: #c0392b; /* Dark red/burgundy for elegance */
+      font-weight: 500;
       display: block;
-      font-size: 1rem;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+
+    .surah-list a:hover {
+      color: #e74c3c; /* Slightly brighter red on hover */
     }
 
     footer {
       text-align: center;
       padding: 15px;
-      background: #1e3a8a;
-      color: white;
+      background: #2c3e50;
+      color: #fff;
       margin-top: 20px;
     }
   </style>
