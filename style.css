@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'ShalumFont';
+  src: url('fonts/Shuru_20251113155746.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /* ===== White Wikipedia-style Interface ===== */
 
 /* Body */
