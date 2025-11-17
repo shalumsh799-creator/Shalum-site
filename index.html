@@ -5,6 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shalum Site</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Load Custom Font -->
+  <style>
+    @font-face {
+      font-family: 'ShuruFont';
+      src: url('Fonts/Shuru_20251113155746.ttf') format('truetype');
+      font-display: swap;
+    }
+    body {
+      font-family: 'ShuruFont', serif;
+      background: #ffffff;
+      color: #202122;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    header {
+      background: #ffffff;
+      padding: 15px 20px;
+      border-bottom: 1px solid #a2a9b1;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 920px;
+      margin: auto;
+      padding: 20px;
+    }
+    .search-box {
+      margin: 20px 0;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #a2a9b1;
+      border-radius: 4px;
+    }
+    .talifah-list {
+      list-style: none;
+      padding: 0;
+    }
+    .talifah-list li {
+      padding: 6px 0;
+    }
+    .talifah-list a {
+      text-decoration: none;
+      color: #0645ad;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .talifah-list a:hover {
+      text-decoration: underline;
+    }
+    .talifah-karamaat {
+      display: none;
+      margin-top: 5px;
+      padding-left: 20px;
+      list-style: decimal;
+    }
+    .karamat li {
+      padding: 3px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #a2a9b1;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
@@ -13,98 +89,82 @@
     Shalum Site
   </header>
 
-  <!-- Search Box -->
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search Talifah...">
+  <div class="container">
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search Talifah...">
+    </div>
+
+    <!-- Chapters List -->
+    <ul class="talifah-list" id="talifahList">
+      <li>
+        <a onclick="toggleKaramaat(1)">1. Talifah 1</a>
+        <ol id="karamaat1" class="talifah-karamaat karamat">
+          <li>Karamaat 1</li>
+          <li>Karamaat 2</li>
+          <li>Karamaat 3</li>
+          <li>Karamaat 4</li>
+          <li>Karamaat 5</li>
+          <li>Karamaat 6</li>
+          <li>Karamaat 7</li>
+          <li>Karamaat 8</li>
+          <li>Karamaat 9</li>
+          <li>Karamaat 10</li>
+        </ol>
+      </li>
+
+      <li>
+        <a onclick="toggleKaramaat(2)">2. Talifah 2</a>
+        <ol id="karamaat2" class="talifah-karamaat karamat">
+          <li>Karamaat 1</li>
+          <li>Karamaat 2</li>
+          <li>Karamaat 3</li>
+          <li>Karamaat 4</li>
+          <li>Karamaat 5</li>
+          <li>Karamaat 6</li>
+          <li>Karamaat 7</li>
+          <li>Karamaat 8</li>
+          <li>Karamaat 9</li>
+          <li>Karamaat 10</li>
+        </ol>
+      </li>
+
+      <!-- Repeat up to Talifah 20 similarly -->
+    </ul>
+
   </div>
 
-  <!-- Chapters List -->
-  -->
-<ul class="talifah-list" id="talifahList">
-  <li>
-    <a onclick="toggleKaramaat(1)">1. Talifah 1</a>
-    <ol id="karamaat1" class="talifah-karamaat">
-      <li>Karamaat 1</li>
-      <li>Karamaat 2</li>
-      <li>Karamaat 3</li>
-      <li>Karamaat 4</li>
-      <li>Karamaat 5</li>
-      <li>Karamaat 6</li>
-      <li>Karamaat 7</li>
-      <li>Karamaat 8</li>
-      <li>Karamaat 9</li>
-      <li>Karamaat 10</li>
-    </ol>
-  </li>
-
-  <li>
-    <a onclick="toggleKaramaat(2)">2. Talifah 2</a>
-    <ol id="karamaat2" class="talifah-karamaat">
-      <li>Karamaat 1</li>
-      <li>Karamaat 2</li>
-      <li>Karamaat 3</li>
-      <li>Karamaat 4</li>
-      <li>Karamaat 5</li>
-      <li>Karamaat 6</li>
-      <li>Karamaat 7</li>
-      <li>Karamaat 8</li>
-      <li>Karamaat 9</li>
-      <li>Karamaat 10</li>
-    </ol>
-  </li>
-
-  <!-- Repeat for Talifah 3 → 20 -->
-  <li>
-    <a onclick="toggleKaramaat(3)">3. Talifah 3</a>
-    <ol id="karamaat3" class="talifah-karamaat">
-      <li>Karamaat 1</li>
-      <li>Karamaat 2</li>
-      <li>Karamaat 3</li>
-      <li>Karamaat 4</li>
-      <li>Karamaat 5</li>
-      <li>Karamaat 6</li>
-      <li>Karamaat 7</li>
-      <li>Karamaat 8</li>
-      <li>Karamaat 9</li>
-      <li>Karamaat 10</li>
-    </ol>
-  </li>
-
-  <!-- Continue up to Talifah 20 -->
-</ul>
-
-<script>
-// Toggle Karamaat visibility
-function toggleKaramaat(num) {
-  const karamaat = document.getElementById('karamaat' + num);
-  if (karamaat.style.display === 'none' || karamaat.style.display === '') {
-    karamaat.style.display = 'block';
-  } else {
-    karamaat.style.display = 'none';
-  }
-}
-
-// Search functionality for Talifah
-const searchInput = document.getElementById('searchInput');
-const talifahList = document.getElementById('talifahList');
-const talifahItems = talifahList.getElementsByTagName('li');
-
-searchInput.addEventListener('keyup', function() {
-  const filter = searchInput.value.toLowerCase();
-  for (let i = 0; i < talifahItems.length; i++) {
-    const a = talifahItems[i].getElementsByTagName('a')[0];
-    talifahItems[i].style.display = a.textContent.toLowerCase().includes(filter) ? '' : 'none';
-  }
-});
-</script>
-
-</body>
-</html>
-
+  <!-- Footer -->
   <footer>
     &copy; 2025 Shalum Site
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    // Toggle Karamaat visibility
+    function toggleKaramaat(num) {
+      const karamaat = document.getElementById('karamaat' + num);
+      if (karamaat.style.display === 'none' || karamaat.style.display === '') {
+        karamaat.style.display = 'block';
+      } else {
+        karamaat.style.display = 'none';
+      }
+    }
+
+    // Search functionality for Talifah
+    const searchInput = document.getElementById('searchInput');
+    const talifahList = document.getElementById('talifahList');
+    const talifahItems = talifahList.getElementsByTagName('li');
+
+    searchInput.addEventListener('keyup', function() {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 0; i < talifahItems.length; i++) {
+        const a = talifahItems[i].getElementsByTagName('a')[0];
+        talifahItems[i].style.display = a.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      }
+    });
+  </script>
+
 </body>
 </html>
