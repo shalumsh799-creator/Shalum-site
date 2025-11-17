@@ -1,0 +1,9 @@
+.karamaat {
+    margin: 15px auto;
+    max-width: 700px;
+    padding: 12px;
+    border-left: 4px solid #111;
+    background: #fdfdfd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
