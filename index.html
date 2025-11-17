@@ -3,76 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Shalum Website</title>
-  <link rel="stylesheet" href="style.css">
+  <title>My Shalum Quran Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2980b9;
+      color: white;
       padding: 20px;
-      line-height: 1.6;
-    }
-    h1 {
       text-align: center;
-      color: #2c3e50;
     }
-    .verse {
-      background: #fff;
-      padding: 15px;
-      margin: 10px 0;
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .search-box {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .search-box input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    ul.surah-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul.surah-list li {
+      background: white;
+      margin: 5px 0;
+      padding: 10px 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .verse h2 {
-      margin: 0 0 5px 0;
-      font-size: 1rem;
-      color: #2980b9;
-    }
-    .verse p {
+      font-weight: bold;
       font-size: 1.1rem;
-      margin: 0;
+      transition: 0.2s;
+    }
+
+    ul.surah-list li:hover {
+      background-color: #d6eaf8;
+    }
+
+    ul.surah-list li a {
+      text-decoration: none;
+      color: #2980b9;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2980b9;
+      color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <h1>My Shalum Website (English Transliteration)</h1>
 
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:1</h2>
-    <p>Bismillahir Rahmanir Rahim</p>
+<header>
+  <h1>My Shalum Quran Website</h1>
+</header>
+
+<main>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search Surah...">
   </div>
 
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:2</h2>
-    <p>Alhamdulillahi Rabbil Alamin</p>
-  </div>
+  <ul class="surah-list" id="surahList">
+    <!-- Example Surahs; you can add more -->
+    <li><a href="surahs/1.html">1. Al-Fatiha</a></li>
+    <li><a href="surahs/2.html">2. Al-Baqarah</a></li>
+    <li><a href="surahs/3.html">3. Al-Imran</a></li>
+    <li><a href="surahs/4.html">4. An-Nisa</a></li>
+    <li><a href="surahs/5.html">5. Al-Ma'idah</a></li>
+    <li><a href="surahs/6.html">6. Al-An'am</a></li>
+    <li><a href="surahs/7.html">7. Al-A'raf</a></li>
+    <!-- Add all 114 Surahs here -->
+  </ul>
+</main>
 
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:3</h2>
-    <p>Ar-Rahmanir-Rahim</p>
-  </div>
+<footer>
+  &copy; 2025 My Shalum Quran Website
+</footer>
 
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:4</h2>
-    <p>Maliki Yawmid-Deen</p>
-  </div>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const surahList = document.getElementById('surahList');
+  const surahs = surahList.getElementsByTagName('li');
 
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:5</h2>
-    <p>Iyyaka na’budu wa iyyaka nasta’in</p>
-  </div>
+  searchInput.addEventListener('keyup', function() {
+    const filter = searchInput.value.toLowerCase();
+    for (let i = 0; i < surahs.length; i++) {
+      const a = surahs[i].getElementsByTagName('a')[0];
+      const textValue = a.textContent || a.innerText;
+      if (textValue.toLowerCase().indexOf(filter) > -1) {
+        surahs[i].style.display = '';
+      } else {
+        surahs[i].style.display = 'none';
+      }
+    }
+  });
+</script>
 
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:6</h2>
-    <p> Ihdinas-Sirat al-Mustaqim</p>
-  </div>
-
-  <div class="verse">
-    <h2>Surah Al-Fatiha 1:7</h2>
-    <p>Siratal-ladhina an’amta ‘alayhim ghayril-maghduubi ‘alayhim wa lad-dallin</p>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
