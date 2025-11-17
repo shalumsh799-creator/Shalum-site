@@ -1,95 +1,25 @@
-@font-face {
-  font-family: 'ShalumFont';
-  src: url('fonts/Shuru_20251113155746.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-/* ===== White Wikipedia-style Interface ===== */
+/* Wikipedia‑style clean black & white theme + your custom font */
 
-/* Body */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #111;
-    line-height: 1.6;
-}
+/* 1. Import your custom font */ @font-face { font-family: 'ShuruFont'; src: url('Fonts/Shuru_20251113155746.ttf') format('truetype'); font-weight: normal; font-style: normal; }
 
-/* Top Banner */
-header {
-    background: #fff;
-    color: #000;
-    text-align: center;
-    padding: 20px;
-    font-size: 2rem;
-    font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+/* 2. Apply general page style */ html, body { margin: 0; padding: 0; background: #ffffff; color: #000000; font-family: 'ShuruFont', serif; font-size: 17px; line-height: 1.7; }
 
-/* Search Box */
-.search-box {
-    display: flex;
-    justify-content: center;
-    margin: 20px 10px;
-}
+/* 3. Wikipedia‑like content width */ .content { max-width: 850px; margin: auto; padding: 20px; }
 
-.search-box input {
-    width: 90%;
-    max-width: 500px;
-    padding: 12px 18px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
+/* 4. Heading styles */ h1, h2, h3, h4 { font-family: 'ShuruFont', serif; font-weight: bold; color: #000000; border-bottom: 1px solid #dcdcdc; padding-bottom: 5px; margin-top: 40px; }
 
-/* Talifah List */
-.talifah-list {
-    list-style: none;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    margin: 0;
-}
+h1 { font-size: 32px; } h2 { font-size: 26px; } h3 { font-size: 22px; } h4 { font-size: 18px; }
 
-.talifah-list li {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
+/* 5. Paragraph spacing */ p { margin: 14px 0; }
 
-.talifah-list li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
+/* 6. Links like Wikipedia */ a { color: #0645ad; text-decoration: none; } a:hover { text-decoration: underline; }
 
-.talifah-list a {
-    text-decoration: none;
-    color: #111;
-    font-weight: 500;
-    display: block;
-    font-size: 1.05rem;
-}
+/* 7. Info box style (optional) */ .infobox { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; float: right; width: 250px; margin: 0 0 20px 20px; font-size: 15px; }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #fff;
-    color: #111;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-}
+/* 8. Table style */ table { border-collapse: collapse; width: 100%; }
 
-/* Responsive */
-@media screen and (max-width: 600px) {
-    .talifah-list {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    }
-}
+td, th { border: 1px solid #a2a9b1; padding: 8px; }
+
+th { background: #f2f2f2; font-weight: bold; }
+
+/* 9. Footer style */ footer { margin-top: 50px; text-align: center; font-size: 14px; color: #555; }
