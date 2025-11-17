@@ -1,6 +1,110 @@
+/* ===== Shalum Site - Black & White Elegant Theme ===== */
+
+/* Fonts */
 body {
-    font-family: Arial;
-    background: #f0f0f0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5; /* light gray background */
+    color: #000;
+}
+
+/* Header */
+header {
+    background: #000; /* Black header */
+    color: #fff;
     text-align: center;
-    padding-top: 50px;
+    padding: 25px 15px;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 10px;
+}
+
+.search-box input {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+/* Surah list grid */
+.surah-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 18px;
+    padding: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+/* Surah cards */
+.surah-list li {
+    background: #fff; /* White card */
+    border-radius: 12px;
+    padding: 15px 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s;
+}
+
+/* Hover effect - black & white */
+.surah-list li:hover {
+    background: #000; /* Black background */
+    color: #fff;       /* White text */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.surah-list li a {
+    text-decoration: none;
+    color: #000; /* Black links initially */
+    font-weight: 500;
+    display: block;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+}
+
+.surah-list li:hover a {
+    color: #fff; /* White link on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #000;
+    color: #fff;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .surah-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    header {
+        font-size: 1.6rem;
+        padding: 20px 10px;
+    }
+
+    .search-box input {
+        width: 95%;
+    }
 }
