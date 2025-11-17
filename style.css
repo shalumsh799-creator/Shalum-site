@@ -1,21 +1,33 @@
-/* Load Custom Font */
+/* ---------------------- */
+/* Custom Font */
 @font-face {
-  font-family: "ShuruFont";
-  src: url("Fonts/Shuru_20251113155746.ttf") format("truetype");
+  font-family: 'ShuruFont';
+  src: url('Fonts/Shuru_20251113155746.ttf') format('truetype');
   font-display: swap;
 }
 
-/* Global Style */
+/* ---------------------- */
+/* Global Styles */
 body {
-  font-family: "ShuruFont", serif;
+  font-family: 'ShuruFont', serif;
   background: #ffffff;
+  color: #202122;
   margin: 0;
   padding: 0;
-  color: #202122;
   line-height: 1.7;
 }
 
-/* Top Wikipedia Banner */
+a {
+  text-decoration: none;
+  color: #0645ad;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------- */
+/* Header */
 header {
   background: #ffffff;
   padding: 15px 20px;
@@ -23,79 +35,92 @@ header {
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-}
-
-header h1 {
+  z-index: 10;
   font-size: 28px;
-  margin: 0;
   font-weight: bold;
 }
 
-/* Page Container */
+/* ---------------------- */
+/* Container */
 .container {
   max-width: 920px;
   margin: auto;
   padding: 20px;
 }
 
-/* Chapter List (Talifah) */
-.talifah-list {
-  list-style: none;
-  padding: 0;
-}
-
-.talifah-list li {
-  padding: 6px 0;
-}
-
-.talifah-list a {
-  text-decoration: none;
-  color: #0645ad;
-  font-size: 20px;
-}
-
-.talifah-list a:hover {
-  text-decoration: underline;
-}
-
-/* Section Title */
-.section-title {
-  margin-top: 30px;
-  font-size: 26px;
-  border-bottom: 1px solid #a2a9b1;
-  padding-bottom: 4px;
-  font-weight: bold;
-}
-
-/* Karamat Box */
-.karamat {
-  background: #f8f9fa;
-  padding: 15px;
-  border-left: 3px solid #a2a9b1;
-  margin-bottom: 20px;
-  border-radius: 4px;
-}
-
-.karamat h3 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-.karamat p {
-  margin: 0;
-  white-space: pre-wrap;
-}
-
+/* ---------------------- */
 /* Search Box */
 .search-box {
   margin: 20px 0;
-  display: flex;
 }
 
 .search-box input {
   width: 100%;
-  padding: 10px;
+  padding: 12px 15px;
   font-size: 18px;
   border: 1px solid #a2a9b1;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* ---------------------- */
+/* Talifah List */
+.talifah-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.talifah-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.talifah-list a {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Karamaat (Verses) */
+.talifah-karamaat {
+  display: none;
+  margin-top: 5px;
+  padding-left: 25px;
+  list-style: decimal;
+}
+
+.karamat li {
+  padding: 3px 0;
+  font-size: 18px;
+}
+
+/* ---------------------- */
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #a2a9b1;
+  margin-top: 40px;
+}
+
+/* ---------------------- */
+/* Responsive */
+@media screen and (max-width: 600px) {
+  header {
+    font-size: 22px;
+  }
+
+  .talifah-list a {
+    font-size: 18px;
+  }
+
+  .search-box input {
+    font-size: 16px;
+  }
+
+  .karamat li {
+    font-size: 16px;
+  }
 }
