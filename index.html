@@ -19,28 +19,87 @@
   </div>
 
   <!-- Chapters List -->
-  <ul class="talifah-list" id="talifahList">
-    <li><a href="talifah/1.html">1. Talifah 1</a></li>
-    <li><a href="talifah/2.html">2. Talifah 2</a></li>
-    <li><a href="talifah/3.html">3. Talifah 3</a></li>
-    <li><a href="talifah/4.html">4. Talifah 4</a></li>
-    <li><a href="talifah/5.html">5. Talifah 5</a></li>
-    <li><a href="talifah/6.html">6. Talifah 6</a></li>
-    <li><a href="talifah/7.html">7. Talifah 7</a></li>
-    <li><a href="talifah/8.html">8. Talifah 8</a></li>
-    <li><a href="talifah/9.html">9. Talifah 9</a></li>
-    <li><a href="talifah/10.html">10. Talifah 10</a></li>
-    <li><a href="talifah/11.html">11. Talifah 11</a></li>
-    <li><a href="talifah/12.html">12. Talifah 12</a></li>
-    <li><a href="talifah/13.html">13. Talifah 13</a></li>
-    <li><a href="talifah/14.html">14. Talifah 14</a></li>
-    <li><a href="talifah/15.html">15. Talifah 15</a></li>
-    <li><a href="talifah/16.html">16. Talifah 16</a></li>
-    <li><a href="talifah/17.html">17. Talifah 17</a></li>
-    <li><a href="talifah/18.html">18. Talifah 18</a></li>
-    <li><a href="talifah/19.html">19. Talifah 19</a></li>
-    <li><a href="talifah/20.html">20. Talifah 20</a></li>
-  </ul>
+  -->
+<ul class="talifah-list" id="talifahList">
+  <li>
+    <a onclick="toggleKaramaat(1)">1. Talifah 1</a>
+    <ol id="karamaat1" class="talifah-karamaat">
+      <li>Karamaat 1</li>
+      <li>Karamaat 2</li>
+      <li>Karamaat 3</li>
+      <li>Karamaat 4</li>
+      <li>Karamaat 5</li>
+      <li>Karamaat 6</li>
+      <li>Karamaat 7</li>
+      <li>Karamaat 8</li>
+      <li>Karamaat 9</li>
+      <li>Karamaat 10</li>
+    </ol>
+  </li>
+
+  <li>
+    <a onclick="toggleKaramaat(2)">2. Talifah 2</a>
+    <ol id="karamaat2" class="talifah-karamaat">
+      <li>Karamaat 1</li>
+      <li>Karamaat 2</li>
+      <li>Karamaat 3</li>
+      <li>Karamaat 4</li>
+      <li>Karamaat 5</li>
+      <li>Karamaat 6</li>
+      <li>Karamaat 7</li>
+      <li>Karamaat 8</li>
+      <li>Karamaat 9</li>
+      <li>Karamaat 10</li>
+    </ol>
+  </li>
+
+  <!-- Repeat for Talifah 3 → 20 -->
+  <li>
+    <a onclick="toggleKaramaat(3)">3. Talifah 3</a>
+    <ol id="karamaat3" class="talifah-karamaat">
+      <li>Karamaat 1</li>
+      <li>Karamaat 2</li>
+      <li>Karamaat 3</li>
+      <li>Karamaat 4</li>
+      <li>Karamaat 5</li>
+      <li>Karamaat 6</li>
+      <li>Karamaat 7</li>
+      <li>Karamaat 8</li>
+      <li>Karamaat 9</li>
+      <li>Karamaat 10</li>
+    </ol>
+  </li>
+
+  <!-- Continue up to Talifah 20 -->
+</ul>
+
+<script>
+// Toggle Karamaat visibility
+function toggleKaramaat(num) {
+  const karamaat = document.getElementById('karamaat' + num);
+  if (karamaat.style.display === 'none' || karamaat.style.display === '') {
+    karamaat.style.display = 'block';
+  } else {
+    karamaat.style.display = 'none';
+  }
+}
+
+// Search functionality for Talifah
+const searchInput = document.getElementById('searchInput');
+const talifahList = document.getElementById('talifahList');
+const talifahItems = talifahList.getElementsByTagName('li');
+
+searchInput.addEventListener('keyup', function() {
+  const filter = searchInput.value.toLowerCase();
+  for (let i = 0; i < talifahItems.length; i++) {
+    const a = talifahItems[i].getElementsByTagName('a')[0];
+    talifahItems[i].style.display = a.textContent.toLowerCase().includes(filter) ? '' : 'none';
+  }
+});
+</script>
+
+</body>
+</html>
 
   <footer>
     &copy; 2025 Shalum Site
