@@ -1,25 +1,101 @@
-/* Wikipedia‑style clean black & white theme + your custom font */
+/* Load Custom Font */
+@font-face {
+  font-family: "ShuruFont";
+  src: url("Fonts/Shuru_20251113155746.ttf") format("truetype");
+  font-display: swap;
+}
 
-/* 1. Import your custom font */ @font-face { font-family: 'ShuruFont'; src: url('Fonts/Shuru_20251113155746.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/* Global Style */
+body {
+  font-family: "ShuruFont", serif;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #202122;
+  line-height: 1.7;
+}
 
-/* 2. Apply general page style */ html, body { margin: 0; padding: 0; background: #ffffff; color: #000000; font-family: 'ShuruFont', serif; font-size: 17px; line-height: 1.7; }
+/* Top Wikipedia Banner */
+header {
+  background: #ffffff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #a2a9b1;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+}
 
-/* 3. Wikipedia‑like content width */ .content { max-width: 850px; margin: auto; padding: 20px; }
+header h1 {
+  font-size: 28px;
+  margin: 0;
+  font-weight: bold;
+}
 
-/* 4. Heading styles */ h1, h2, h3, h4 { font-family: 'ShuruFont', serif; font-weight: bold; color: #000000; border-bottom: 1px solid #dcdcdc; padding-bottom: 5px; margin-top: 40px; }
+/* Page Container */
+.container {
+  max-width: 920px;
+  margin: auto;
+  padding: 20px;
+}
 
-h1 { font-size: 32px; } h2 { font-size: 26px; } h3 { font-size: 22px; } h4 { font-size: 18px; }
+/* Chapter List (Talifah) */
+.talifah-list {
+  list-style: none;
+  padding: 0;
+}
 
-/* 5. Paragraph spacing */ p { margin: 14px 0; }
+.talifah-list li {
+  padding: 6px 0;
+}
 
-/* 6. Links like Wikipedia */ a { color: #0645ad; text-decoration: none; } a:hover { text-decoration: underline; }
+.talifah-list a {
+  text-decoration: none;
+  color: #0645ad;
+  font-size: 20px;
+}
 
-/* 7. Info box style (optional) */ .infobox { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; float: right; width: 250px; margin: 0 0 20px 20px; font-size: 15px; }
+.talifah-list a:hover {
+  text-decoration: underline;
+}
 
-/* 8. Table style */ table { border-collapse: collapse; width: 100%; }
+/* Section Title */
+.section-title {
+  margin-top: 30px;
+  font-size: 26px;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 4px;
+  font-weight: bold;
+}
 
-td, th { border: 1px solid #a2a9b1; padding: 8px; }
+/* Karamat Box */
+.karamat {
+  background: #f8f9fa;
+  padding: 15px;
+  border-left: 3px solid #a2a9b1;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
 
-th { background: #f2f2f2; font-weight: bold; }
+.karamat h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
 
-/* 9. Footer style */ footer { margin-top: 50px; text-align: center; font-size: 14px; color: #555; }
+.karamat p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Search Box */
+.search-box {
+  margin: 20px 0;
+  display: flex;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #a2a9b1;
+  border-radius: 4px;
+}
